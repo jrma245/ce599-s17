@@ -1,0 +1,73 @@
+class point(object):
+"""
+This sets a point object to be used to find the car's location.
+"""
+
+class car(object):
+    """
+    Provides the vehicle's the color, location, and direction in Azimuth
+    """
+	def __init__(auto, color="", x=0, y=0, az=0):
+		auto.color = color
+		auto.location = point()
+		auto.location.b = b
+		auto.location.c = c
+		auto.direction = az
+		"""
+		Assigns the values for each car
+		"""
+		
+	def go(auto,p):
+		azimuth(auto)
+		if auto.direction == 0:
+			auto.location.c = auto.location.c+p
+			return print_car(auto)
+		elif auto.direction == 90:
+			auto.location.b = auto.location.b+p
+			return print_car(auto)
+		elif auto.direction == 180:
+			auto.location.c = auto.location.c-p
+			return print_car(auto)
+		elif auto.direction == 270:
+			auto.location.b = auto.location.b-p
+			return print_car(auto)
+		else:
+			return "That's a car wreck and it's all your fault.  Enter a direction that is north = 0, east = 90, south = 180, or west = 270!"
+		"""
+		This is the main go function which moves the car in the desried pointed direction
+		"""
+		
+	def turn_left(auto):
+		auto.direction = auto.direction-90
+		"""
+		Result: Car turns left
+		"""
+		
+	def turn_right(auto):
+		auto.direction = auto.direction+90
+		"""
+		Result: Car turns right
+		"""
+		
+	def azimuth(auto):
+		if auto.direction >= 360:
+			while (auto.direction >= 360):
+				auto.direction = auto.direction-360
+		elif auto.direction < 0:
+			auto.direction = auto.direction + 360
+		else:
+			auto.direction = auto.direction
+		return auto
+		"""
+		This function looks for instances where the Azimuth goes outside the radius of a circle
+		"""
+		
+	def print_car(auto):
+		print("Color is " , auto.color)
+		print("b = " , auto.location.x)
+		print("c = " , auto.location.y)
+		"""
+		This gives the vehicle's status
+		"""
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
